@@ -1,0 +1,4 @@
+<?php 
+$c2='create table Genders(id int not null auto_increment primary key,gender varchar(32)not null)default charset="utf8"';
+$c3='create table Users(id int not null auto_increment primary key,name varchar(128)not null,surname varchar(128)not null,pass varchar(254)not null,email varchar(64),genderid int not null,foreign key(genderid) references Genders(id) on delete cascade,birthday date)default charset="utf8"';
+$c3='create table Feedback(id int not null auto_increment primary key,email varchar(64) not null, name varchar(128) not null,userid int,foreign key(userid) references Users(id) on delete cascade,massage text not null, date timestamp)default charset="utf8"';
