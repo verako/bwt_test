@@ -1,9 +1,8 @@
 <?php
 return array(
-
-	'' => 'site/index',
+	'user'=>'user/register',
 	'weather' => 'weather/view', 
 	'feedback' => 'feedback/view', 
 	'list' => 'list/view', 
-
+	'' => 'site/index',
 	);

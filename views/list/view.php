@@ -4,7 +4,7 @@
 	<?php 
 	foreach ($list as $key => $value) {
 	 	echo "<div>".$list[$key]['name']."</div>";
-	 	echo "<div>".$list[$key]['massage']."</div>";
+	 	echo "<div>".$list[$key]['message']."</div>";
 	 	echo "<div>".$list[$key]['date']."</div>";
 	 	echo "<hr>";
 	 }

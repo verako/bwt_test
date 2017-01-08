@@ -10,43 +10,52 @@
 	// 		exit();
 	// 	}
 		
-	// 	$customer=new Customer($login,$pass);
-	// 	$customer->IntoDb();
-	
+		
 	//}
 	//else{
+	
+	if ($result) {
+		echo "<h4>Полователь зарегистирован успешно!!!</h4>";
+	}
+	if (isset($errors) && is_array($errors)) {
+		echo "<ul>";
+		foreach ($errors as $error) {
+			echo "<li>".$error."</li>";
+		}
+		echo "</ul>";
+	}
 	?>
-	<form  method="post" enctype="multipart/form-data" >
+	<form  method="post" >
 		<div class="form-group">
-			<label for="name">Name</label>
-			<input type="text" name="name" class="form-control">
+			<label for="name">Ваше имя</label>
+			<input type="text" name="name" placeholder="Имя" value="<?php echo $name;?>" class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="surname">Surname</label>
-			<input type="text" name="surname" class="form-control">
+			<label for="surname">Ваша фамилия</label>
+			<input type="text" name="surname"  placeholder="Фамилия" value="<?php echo $surname;?>" class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="pass1">Password</label>
-			<input type="password" name="pass" class="form-control">
+			<label for="pass1">Ваш пароль</label>
+			<input type="password" name="pass"  placeholder="Пароль" value="<?php echo $pass;?>" class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="pass2">Confirm password</label>
-			<input type="password" name="pass2" class="form-control">
+			<label for="pass2">Повторите пароль</label>
+			<input type="password" name="pass2"  placeholder="Повторите пароль" value="<?php echo $pass2;?>" class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="email">Email adres</label>
-			<input type="email" name="email" class="form-control">
+			<label for="email">Ваш Email</label>
+			<input type="email" name="email"  placeholder="Эл. почта" value="<?php echo $email;?>" class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="birthday">Birthday</label>
-			<input type="date" name="birthday" class="form-control">
+			<label for="birthday">Выберите дату Вашего рождения</label>
+			<input type="date" name="birthday" value="<?php echo $birthday;?>" class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="gender">Gender</label>
-			<p>Female<input type="radio" name="genderid" value="female" class="form-control"></p>
-			<p>Male<input type="radio" name="genderid" value="male" class="form-control"></p>
+			<label for="gender">Выберите ваш пол</label>
+			<p>Female<input type="radio" name="genderid" value="2" class="form-control"></p>
+			<p>Male<input type="radio" name="genderid" value="1" checked="" class="form-control"></p>
 		</div>
-		<button type="submit" class="btn btn-primary" name="adduser">Register</button>
+		<input type="submit" class="btn btn-primary" name="adduser" value="Зарегистрироваться">
 	</form>
 	<br>
 	<?php 

@@ -28,7 +28,8 @@ require_once(ROOT.'/components/Router.php');
 require_once(ROOT.'/components/Db.php');
 
 // 3. Установка соединения с БД
-
+Db::SetParam('localhost','root','123456','bwt_test');
+$pdo=Db::connect();
 
 // 4. Вызор Router
 

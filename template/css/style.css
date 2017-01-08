@@ -4,7 +4,12 @@ html, body{
 	padding: 0;
 }
 body{
-	padding-top: 50px
+	margin: 0;
+	padding: 0;
+	background: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: black;
 }
 .navbar-brand{
 	margin-top: -10px;
@@ -26,29 +31,6 @@ footer{
 	height: 100px;
 	background-color: #FE7D3A;
 
-}
-
-.marketing{
-	padding-top: 15px
-}
-.btn-primary {
-    color: #fff;
-    background-color: #FE7D3A;
-    border-color: #D11102;
-}
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
-    color: #fff;
-   background-color: #D11102;
-    border-color: #FE7D3A;
-}
-.carousel-inner>.item>img, .carousel-inner>.item>a>img {
-    width: 100%;
-}
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover, .ui-button.ui-stat-focus {
-    border: 1px solid #D11102;
-    background: #FE7D3A;
-    font-weight: normal;
-    color: #fff;
 }
 
 
