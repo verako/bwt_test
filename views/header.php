@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,12 +28,19 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li ><a href="/">Главная</a></li>
-              <li ><a href="/user">Вход/Регистрация</a></li>
               <li ><a href="/weather">Погода</a></li>
               <li ><a href="/feedback">Добавить отзыв</a></li> 
               <li ><a href="/list">Отзывы</a></li> 
             </ul>
-            
+            <?php 
+          //   Db::SetParam('localhost','root','123456','bwt_test');
+          //   $pdo=Db::connect();
+          //   print_r($_SESSION);
+          //    if(isset($_SESSION["user"])){
+          //      echo "<h4 id='hello'>Добро пожаловать, <span>".$_SESSION['user']."! </span><a class='exit' href='logout.php'>Выйти</a></h4>";
+          // }
+          
+          ?>
             
           </div><!--/.navbar-collapse -->
         </div>

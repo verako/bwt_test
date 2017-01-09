@@ -18,6 +18,28 @@ class UserModel{
 		return $result->execute();
 
 	}
+	public static function checkUserData($email,$pass){
+		Db::SetParam('localhost','root','123456','bwt_test');
+		$pdo=Db::connect();
+
+		$sql = 'SELECT * FROM Users WHERE email=:email AND pass=:pass';
+		$result=$pdo->prepare($sql);
+		$result->bindParam(':pass',$pass,PDO::PARAM_INT);
+		$result->bindParam(':email',$email,PDO::PARAM_INT);
+		$result->execute();
+
+		$user=$result->fetch();
+		if ($user) {
+			return $user['id'];
+		}
+		return false;
+	}
+	public static function auth($userId){
+		
+		$_SESSION['user']=$userId;
+	}
+
+
 	//проверяем имя не меньше 3 символов
 	public static function checkName($name){
 		if(strlen($name)>=2){
@@ -36,6 +58,13 @@ class UserModel{
 	//проверяем пароль не меньше 6 символов
 	public static function checkPass($pass,$pass2){
 		if($pass==$pass2 && (strlen($pass)>=6)){
+			return true;
+		}
+		return false;
+
+	}
+	public static function checkPass1($pass){
+		if(strlen($pass)>=6){
 			return true;
 		}
 		return false;

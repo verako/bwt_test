@@ -51,4 +51,34 @@ class UserController
 		}
 
 
+		public function actionLogin()
+		{
+			$email='';
+			$pass='';
+			if (isset($_POST['submit'])) {
+				$email=$_POST['email'];
+				$pass=$_POST['pass'];
+
+				$errors=false;
+				//валидация полей
+				if (!UserModel::checkEmail($email)) {
+					$errors[]="email введен не верно";
+				}
+				if (!UserModel::checkPass1($pass)) {
+					$errors[]="Пароль не короче 6 символов";
+				}
+				//проверяем существует ли пользователь
+				$userId=UserModel::checkUserData($email,$pass);
+				if ($userId==false) {
+					$errors[]="Не правльные данные для входа";
+				}
+				else{
+					UserModel::auth($userId);//записываем пользователя в сессию
+					header("Location:/feedback");
+				}
+			}
+			require_once(ROOT.'/views/user/login.php');
+			return true;
+		}
+
 }

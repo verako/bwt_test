@@ -25,7 +25,7 @@
 		echo "</ul>";
 	}
 	?>
-	<form  method="post" >
+	<form  method="post" name="reg" >
 		<div class="form-group">
 			<label for="name">Ваше имя</label>
 			<input type="text" name="name" placeholder="Имя" value="<?php echo $name;?>" class="form-control">
@@ -35,7 +35,7 @@
 			<input type="text" name="surname"  placeholder="Фамилия" value="<?php echo $surname;?>" class="form-control">
 		</div>
 		<div class="form-group">
-			<label for="pass1">Ваш пароль</label>
+			<label for="pass">Ваш пароль</label>
 			<input type="password" name="pass"  placeholder="Пароль" value="<?php echo $pass;?>" class="form-control">
 		</div>
 		<div class="form-group">
@@ -63,7 +63,7 @@
 	?>
 </div>
 
-
+ 
 <!-- Модальное окно -->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog">
@@ -75,27 +75,35 @@
       </div>
       <!-- Основная часть модального окна, содержащая форму для регистрации -->
       <div class="modal-body">
+      <?php 
+	    if (isset($errors) && is_array($errors)) {
+			echo "<ul>";
+			foreach ($errors as $error) {
+				echo "<li>".$error."</li>";
+			}
+			echo "</ul>";
+		}
+       ?>
         <!-- Форма для регистрации -->
   	    <form id="myForm" method="post" role="form" name="myForm">
-	      <!-- Блок для ввода логина -->
-	      <div class="form-group has-feedback">
-	        <label for="login" class="control-label">Введите логин:</label>
-            <div class="input-group">
-	          <span class="input-group-addon"></span>         
-	          <input type="text" class="form-control" required="required" name="login" pattern="&#91;A-Za-z&#93;{6,}" value="">
-	        </div>
-	        <span class="glyphicon form-control-feedback"></span>
-	      </div>
 	      <!-- Блок для ввода email -->
-	      <div class="form-group has-feedback">
+	       <div class="form-group has-feedback">
 	        <label for="email" class="control-label">Введите email:</label>
             <div class="input-group">
-	          <span class="input-group-addon"></span>
-	          <input type="email" class="form-control" required="required" name="email" value="">
+	            <input type="email" class="form-control" required="required" name="email" value="">
 	        </div>
 	        <span class="glyphicon form-control-feedback"></span>
 	      </div>
           <!-- Конец блока для ввода email-->
+	      <!-- Блок для ввода пароля -->
+	      <div class="form-group has-feedback">
+	        <label for="pass" class="control-label">Введите пароль:</label>
+            <div class="input-group">
+	            <input type="password" class="form-control" required="required" name="pass" value="">
+	        </div>
+	        <span class="glyphicon form-control-feedback"></span>
+	      </div>
+
 	      <hr>
           <!--Изображение, содержащее код CAPTCHA-->		  
 	      <img id="img-captcha" src="captcha.php">  
@@ -107,12 +115,14 @@
 		    <input id="text-captcha" name="captcha" type="text" class="form-control" required="required" value="">
 		    <span class="glyphicon form-control-feedback"></span>
           </div>
+          <input id="save" type="submit" class="btn btn-primary" name="submit" value="Вход">
         </form>
       </div>
       <!-- Нижняя часть модального окна -->
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-        <button id="save" type="button" class="btn btn-primary">Вход</button>
+        
+        <!-- <button id="save" type="button" class="btn btn-primary">Вход</button> -->
       </div>
     </div>
   </div>
