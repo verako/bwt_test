@@ -6,7 +6,7 @@
   <button class="btn btn-lg btn-success" ><a href="/login">Вход</a></button>
   <button class="btn btn-lg btn-success"><a href="/user">Регистрация</a></button>
 </div>
-
+<div style="height: 600px"></div>
 
 
 <?php include ROOT.'/views/footer.php';?>

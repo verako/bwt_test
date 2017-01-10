@@ -68,12 +68,12 @@ class UserController
 					$errors[]="Пароль не короче 6 символов";
 				}
 				//проверяем существует ли пользователь
-				$userId=UserModel::checkUserData($email,$pass);
-				if ($userId==false) {
+				$userName=UserModel::checkUserData($email,$pass);
+				if ($userName==false) {
 					$errors[]="Не правльные данные для входа";
 				}
 				else{
-					UserModel::auth($userId);//записываем пользователя в сессию
+					UserModel::auth($userName);//записываем пользователя в сессию
 					header("Location:/feedback");
 				}
 			}

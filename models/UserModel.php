@@ -30,13 +30,13 @@ class UserModel{
 
 		$user=$result->fetch();
 		if ($user) {
-			return $user['id'];
+			return $user['name'];
 		}
 		return false;
 	}
-	public static function auth($userId){
-		
-		$_SESSION['user']=$userId;
+	public static function auth($userName){
+		session_start();
+		$_SESSION['user']=$userName;
 	}
 
 

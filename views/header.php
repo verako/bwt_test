@@ -33,12 +33,12 @@
               <li ><a href="/list">Отзывы</a></li> 
             </ul>
             <?php 
-          //   Db::SetParam('localhost','root','123456','bwt_test');
-          //   $pdo=Db::connect();
-          //   print_r($_SESSION);
-          //    if(isset($_SESSION["user"])){
-          //      echo "<h4 id='hello'>Добро пожаловать, <span>".$_SESSION['user']."! </span><a class='exit' href='logout.php'>Выйти</a></h4>";
-          // }
+            Db::SetParam('localhost','root','123456','bwt_test');
+            $pdo=Db::connect();
+            //print_r($_SESSION);
+             if(isset($_SESSION["user"])){
+               echo "<h4 id='hello'>Добро пожаловать, <span>".$_SESSION['user']."! </span><a class='exit' href='logout.php'>Выйти</a></h4>";
+          }
           
           ?>
             

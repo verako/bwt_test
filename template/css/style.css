@@ -14,15 +14,8 @@ body{
 .navbar-brand{
 	margin-top: -10px;
 }
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open.dropdown-toggle.btn-success {
-    color: #fff;
-    background-color: #D11102;
-    border-color: #FE7D3A;
-}
-
-.btn-success{
-	background-color: #FE7D3A;
-    border-color: #D11102;
+h4{
+	color: white;
 }
 footer{
 	width: 100%;
