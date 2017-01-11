@@ -1,22 +1,23 @@
-<?php include ROOT.'/views/header.php';?>
+<?php include ROOT.'/views/header.php';//feedback?>
 <div class="container" style="height: 100px"></div>
 <div class="container">
 	<form action="index.php?page=4" method="post" enctype="multipart/form-data">
 		<?php 
             Db::SetParam('localhost','root','123456','bwt_test');
             $pdo=Db::connect();
+           	 		
             //print_r($_SESSION);
              if(isset($_SESSION["user"])){ 
-
              	echo "<div class='form-group'>";
 				echo "<label for='name'>Name</label>";
-				echo "<input type='text' name='name' value='".$_SESSION['user']."' class='form-control'>";
+				echo "<input type='text' name='name' value='".$users[0]['name']."' class='form-control'>";
 			    echo "</div>";
+			    echo "<div class='form-group' hidden>";
+				echo "<label for='email'>Email adres</label>";
+				echo "<input type='email' name='email' value='".$users[0]['email']."' class='form-control'></div>";
         	}
      		else{
-        ?>
-
-	
+        ?>	
 			<div class="form-group">
 				<label for="name">Name</label>
 				<input type="text" name="name" class="form-control">

@@ -30,7 +30,7 @@ class UserModel{
 
 		$user=$result->fetch();
 		if ($user) {
-			return $user['name'];
+			return $user['id'];
 		}
 		return false;
 	}
@@ -38,7 +38,7 @@ class UserModel{
 		session_start();
 		$_SESSION['user']=$userName;
 	}
-
+	
 
 	//проверяем имя не меньше 3 символов
 	public static function checkName($name){

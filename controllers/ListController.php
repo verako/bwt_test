@@ -4,7 +4,7 @@ class ListController
 {
 
 
-		public function actionView($page=1)
+		public function actionView()
 		{
 			//echo "<br>Page:".$page;
 			$list=array();
