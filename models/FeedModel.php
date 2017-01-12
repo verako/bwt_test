@@ -21,4 +21,22 @@ class FeedModel{
 			return $_SESSION["user"];
 		}
 	}
+	public static function addFeed($name,$email,$message){
+		Db::SetParam('localhost','root','123456','bwt_test');
+		$pdo=Db::connect();
+		$sql='INSERT INTO Feedback (name,email,message) VALUE (:name,:email,:message)';
+		$result=$pdo->prepare($sql);
+		$result->bindParam(':name',$name,PDO::PARAM_STR);
+		$result->bindParam(':email',$email,PDO::PARAM_STR);
+		$result->bindParam(':message',$message,PDO::PARAM_STR);
+
+		return $result->execute();
+	}
+	public static function checkMess($message){
+		if(strlen($message)>=2){
+			return true;
+		}
+		return false;
+
+	}
 }
